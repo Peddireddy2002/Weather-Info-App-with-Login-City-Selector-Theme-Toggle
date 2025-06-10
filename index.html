@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Weather App with Login and Theme</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Login screen container -->
+  <div id="loginScreen" class="login-screen">
+    <div class="login-box">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="Enter username" required />
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter password" required />
+        <button type="submit">Login</button>
+      </form>
+      <div id="loginMessage" class="login-message"></div>
+    </div>
+  </div>
+
+  <!-- Main app container, hidden initially -->
+  <div class="container" id="weatherApp" style="display:none">
+    <h1>Weather App</h1>
+
+    <!-- Dark Mode Toggle top right -->
+    <div id="modeToggleContainer">
+      <span>Mode</span>
+      <label class="switch">
+        <input type="checkbox" id="darkModeToggle" />
+        <span class="slider round"></span>
+      </label>
+    </div>
+
+    <!-- Buttons -->
+    <div class="top-buttons">
+      <button id="showCitiesBtn">Show Cities</button>
+      <button id="logoutBtn">Logout</button>
+    </div>
+
+    <form id="weatherForm">
+      <input
+        type="text"
+        id="cityInput"
+        placeholder="Enter city name (e.g., New York)"
+        required
+        autocomplete="off"
+        list="citiesList"
+      />
+      <datalist id="citiesList">
+        <option value="New York"></option>
+        <option value="London"></option>
+        <option value="Tokyo"></option>
+        <option value="Paris"></option>
+        <option value="Sydney"></option>
+        <option value="Mumbai"></option>
+      </datalist>
+      <button type="submit">Get Weather</button>
+    </form>
+
+    <div id="result" class="result"></div>
+  </div>
+
+  <!-- Cities Modal -->
+  <div id="citiesModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeCities">&times;</span>
+      <h2>Available Cities</h2>
+      <ul id="citiesListPopup"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
